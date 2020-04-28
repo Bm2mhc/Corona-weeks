@@ -11,12 +11,24 @@ I 2020 blev Danmark lukket ned. I denne tid skole gymnasie elever arbejde hjemme
 ## Opgaver
 
 ### Mandag 16/04 2020
-
 Arbejde med Arrays. Lære forskelige funktioner
+#### Opgaver
+1. definerer et array af minimum 10 semi-tilfældige tal (eller ord, men tal er nemmest)
+hint: var mitarray = [1, 2, ..... n];
 
+2. udskriver det først og sidste tal i dit array
+hint: mitarray[0] og mitarray[mitarray.length-1]
+
+3. sætter dit array sammen med et nyt array
+hint: mitarray.concat(nytarray)
+
+4. adskiller de to arrays igen
+hint: brug slice-metoden
+
+5. finder og udskriver positionen på et bestemt tal i dit array
+hint: brug indexOf-metoden
 ### Tirsdag 28/04 2020
-
-Arbejde med eksamensspørgesmål
+Arbejdet med eksamensspørgesmål
 #### Opgave 1
 Skriv et program, som der fra to arrays kan finde de sæt*, som er tættest på et bestemt tal.
 *Sættene skal indeholde et tal fra hvert af de to arrays.
