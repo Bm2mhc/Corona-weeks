@@ -27,6 +27,7 @@ hint: brug slice-metoden
 
 5. finder og udskriver positionen på et bestemt tal i dit array
 hint: brug indexOf-metoden
+---
 ### Tirsdag 28/04 2020
 Arbejdet med eksamensspørgesmål
 #### Opgave 1
