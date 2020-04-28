@@ -27,7 +27,7 @@
 		<div>Nummere til x</div>
 		<input type="number" id="numberx" value="10">
 		<button id="changethex" onclick=changeX()>Press to change</button>
-		<div>Cloest number to x</div>
+		<div>Closest number to x</div>
 		<button id="findtheclosetnumber" onclick=findclosest()>Press to find closestnumber</button>
 		<input id="closestnumber" value="The closest number to X" readonly>
 	</body>
@@ -40,7 +40,7 @@ function changeNumberToBin(dec){
 }
 
 function changeBinToNumber(dec){
-	return parseInt( dec)
+	return parseInt( dec,2 )
 }
 
 function dothing(){
