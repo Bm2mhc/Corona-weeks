@@ -1,108 +1,112 @@
 <!DOCTYPE html>
 <html>
-	<head>
-	<script src="main.js"></script>
-	<script src="main.js"></script>
-	</head>
-	<body>
-		<h1>From numbers to binary</h1>
-		<input type="number" id="myText" value="write number">
-		<button id="clickclick" onclick=dothing()>Press</button>
-		<input id="NumToBin" value="Result will come here" readonly>
-		
-		<h1>From binary to numbers</h1>
-		<input type="number" id="BinToNumb" value="Write binary">
-		<button id="clickclickclick" onclick=dootherthing()>Press</button>
-		<input id="BinToNum" value="Result will come here" readonly>
 
-		<h1>find 2 numbers closest to X</h1>
-		<div>Nummere til array 1</div>
-		<input type="number" id="numberinarray1" value="0">
-		<button id="addmorevaluetoarray2" onclick=addvaluetoarray1()>Press to add</button>
-		<input id="array1" value="Result will come here" readonly>
-		<div>Nummere til array 2</div>
-		<input type="number" id="numberinarray2" value="0">
-		<button id="addmorevaluetoarray2" onclick=addvaluetoarray2()>Press to add</button>
-		<input id="array2" value="Result will come here" readonly>
-		<div>Nummere til x</div>
-		<input type="number" id="numberx" value="10">
-		<button id="changethex" onclick=changeX()>Press to change</button>
-		<div>Closest number to x</div>
-		<button id="findtheclosetnumber" onclick=findclosest()>Press to find closestnumber</button>
-		<input id="closestnumber" value="The closest number to X" readonly>
-	</body>
+<head>
+	<script src="main.js"></script>
+	<script src="main.js"></script>
+</head>
+
+<body>
+
+	<h1>find 2 numbers closest to X</h1>
+	<div>Nummere til array 1</div>
+	<input type="number" id="numberinarray1" value="0">
+	<button id="addmorevaluetoarray2" onclick=addvaluetoarray1()>Press to add</button>
+	<input id="array1" value="Result will come here" readonly>
+
+	<div>Nummere til array 2</div>
+	<input type="number" id="numberinarray2" value="0">
+	<button id="addmorevaluetoarray2" onclick=addvaluetoarray2()>Press to add</button>
+	<input id="array2" value="Result will come here" readonly>
+
+	<div>Nummere til x</div>
+	<input type="number" id="numberx" value="10">
+	<button id="changethex" onclick=changeX()>Press to change</button>
+
+	<div>Closest number to x</div>
+	<button id="findtheclosetnumber" onclick=findclosest()>Press to find closestnumber</button>
+	<input id="closestnumber" value="The closest number to X" readonly>
+	<br>
+	<br>
+	<hr>
+	<h1>Switch between binary and ten number system</h1>
+	<h2>From numbers to binary</h2>
+	<input type="number" id="myText" value="write number">
+	<button id="clickclick" onclick=dothing()>Press</button>
+	<input id="NumToBin" value="Result will come here" readonly>
+
+	<h2>From binary to numbers</h2>
+	<input type="number" id="BinToNumb" value="Write binary">
+	<button id="clickclickclick" onclick=dootherthing()>Press</button>
+	<input id="BinToNum" value="Result will come here" readonly>
+</body>
+
 </html>
 
 <script>
-function changeNumberToBin(dec){
-	
-    return (dec >>> 0).toString(2);
-}
+	function changeNumberToBin(dec) {
 
-function changeBinToNumber(dec){
-	return parseInt( dec,2 )
-}
+		return (dec >>> 0).toString(2);
+	}
 
-function dothing(){
-document.getElementById("NumToBin").value = changeNumberToBin(document.getElementById("myText").value);
-}
+	function changeBinToNumber(dec) {
+		return parseInt(dec, 2)
+	}
 
-function dootherthing(){
-document.getElementById("BinToNum").value = changeBinToNumber(document.getElementById("BinToNumb").value);
-}
+	function dothing() {
+		document.getElementById("NumToBin").value = changeNumberToBin(document.getElementById("myText").value);
+	}
 
+	function dootherthing() {
+		document.getElementById("BinToNum").value = changeBinToNumber(document.getElementById("BinToNumb").value);
+	}
 </script>
 
 <script>
-
-var arr1 = [6, 7, 8];
-document.getElementById("array1").value = arr1;
-var arr2 = [8, 4, 1]
-document.getElementById("array2").value = arr2;
-var nb = 14;
-
-function addvaluetoarray1(){
-
-	arr1.push(parseInt(document.getElementById("numberinarray1").value, 10 ))
+	var arr1 = [6, 7, 8];
 	document.getElementById("array1").value = arr1;
+	var arr2 = [8, 4, 1]
+	document.getElementById("array2").value = arr2;
+	var nb = 14;
 
-}
+	function addvaluetoarray1() {
 
-function addvaluetoarray2(){
+		arr1.push(parseInt(document.getElementById("numberinarray1").value, 10))
+		document.getElementById("array1").value = arr1;
 
-arr2.push(parseInt(document.getElementById("numberinarray2").value,10))
-document.getElementById("array2").value = arr2;
+	}
 
-}
+	function addvaluetoarray2() {
 
-function changeX(){
+		arr2.push(parseInt(document.getElementById("numberinarray2").value, 10))
+		document.getElementById("array2").value = arr2;
 
-nb = document.getElementById("numberx").value
-document.getElementById("numberx").value = nb;
+	}
 
-}
+	function changeX() {
 
-function findclosest(){
-var a = 0;
-var b = 0;
-var arr = arr1.concat(arr2)
+		nb = document.getElementById("numberx").value
+		document.getElementById("numberx").value = nb;
 
-for(var i in arr) {
-  for(var j in arr) {
-    if(i != j) {
-      var tmp = arr[i] + arr[j];
-      if(tmp <= nb && tmp > a + b) {
-        a = arr[i];
-        b = arr[j];
-      }
-    }
-  }
-}
+	}
 
-document.getElementById("closestnumber").value = "Closest to " + nb + " => " + a + " + " + b
-}
+	function findclosest() {
+		var a = 0;
+		var b = 0;
+		var arr = arr1.concat(arr2)
 
+		for (var i in arr) {
+			for (var j in arr) {
+				if (i != j) {
+					var tmp = arr[i] + arr[j];
+					if (tmp <= nb && tmp > a + b) {
+						a = arr[i];
+						b = arr[j];
+					}
+				}
+			}
+		}
 
-
-
+		document.getElementById("closestnumber").value = "Closest to " + nb + " => " + a + " + " + b
+	}
 </script>
