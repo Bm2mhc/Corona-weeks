@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+	<input type="button" onclick="location.href='../index.html';" value="Go back to start" />
+	<br>
+	<br>
+	<hr>
+
+	<h1>Find den længeste substring som ikke indeholder det samme tegn</h1>
+	<input  id="tekst" value="ssssiiiiiimoonhfdsak">
+	<button id="Changestring" onclick=string()>Press to find longest substring</button>
+	<input id="array1" value="Result will come here" readonly>
+</body>
+
+<script>
+
+
+function string(){
+	
+var data = document.getElementById("tekst").value;
+var result = [""];
+var substring = "";
+
+for (var i = 0; i < data.length; i ++){
+
+	if (substring.includes(data[i])){
+		substring = substring
+		.slice(
+			substring.indexOf(data[i])+1,
+			substring.length -1
+		);
+
+		
+	}
+
+		substring += data[i];
+	
+	if (substring.length > result[0].length){
+		results = [substring];
+	} else if (substring.length === results[0].length){
+		results.push(substring);
+	}
+	console.log(substring);
+}
+
+document.getElementById("array1").value = results;
+}
+
+
+</script>
+</html>
