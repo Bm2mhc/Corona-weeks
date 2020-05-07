@@ -47,3 +47,15 @@ F.eks. vil [[2, 6], [3, 5]] være svaret på arrays [1, 2, 3] og [4, 5, 6] hvor 
 Forklar dit svar med et flow-diagram og dokumenter din løsning på et github repository.
 
 Du har en time og alle hjælpemidler er tilladt.
+
+### fredag 01/05 2020
+
+#### Opgave
+Skriv en algoritme, der kan finde den længste substring i en string, uden gentagende symboler.
+F.eks. i "ssssiiiiiimoonhfdsak" vil svaret være "onhfdsak".
+
+### Torsdag 07/05 2020
+Opgaver fra W3, men skrevet i Javascript og ikke i C
+#### Opgaver 
+https://www.w3resource.com/c-programming-exercises/basic-algo/index.php
+https://www.w3resource.com/c-programming-exercises/practice/index.php
