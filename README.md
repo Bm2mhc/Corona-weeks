@@ -58,4 +58,5 @@ F.eks. i "ssssiiiiiimoonhfdsak" vil svaret være "onhfdsak".
 Opgaver fra W3, men skrevet i Javascript og ikke i C
 #### Opgaver 
 https://www.w3resource.com/c-programming-exercises/basic-algo/index.php
+
 https://www.w3resource.com/c-programming-exercises/practice/index.php
