@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+	<input type="button" onclick="location.href='../index.html';" value="Go back to start" />
+	<br>
+	<br>
+	<hr>
+
+	<h1>Nemme opgaver</h1>
+	<h2>Opgave 1</h2>
+	<input id="number1" value="0" type="number">
+	<input id="number2" value="0" type="number">
+	<button id="opgave1" onclick=opgave1()>Press to find the sum</button>
+	<input id="sluttallet" value="Result will come here" readonly>
+
+	<h2>Opgave 58</h2>
+	<input id="taltillarr" value="0" type="number">
+	<button onclick=opgave58add1()>Press to add to array</button>
+	<input id="arropgave58" value="Result will come here" readonly>
+	<br>
+	<button onclick=opgave58()>Press to find mediean</button>
+	<input id="opgave58" value="Result will come here" readonly>
+
+	<h1>Sværre opgaver</h1>
+	<h2>Opgave 3</h2>
+	<input id="taltillarr1" value="0" type="number">
+	<button onclick=opgave3add1()>Press to add to array</button>
+	<input id="arr1opgave3" value="Result will come here" readonly>
+	<br>
+	<input id="taltilarr2" value="0" type="number">
+	<button onclick=opgave3add2()>Press to add to array</button>
+	<input id="arr2opgave3" value="Result will come here" readonly>
+	<br>
+	<button onclick=opgave3()>Press to find mediean</button>
+	<input id="opgave3" value="Result will come here" readonly>
+
+	<h2>Opgave 5 WIP</h2>
+	<input id="taltilatvende" value="0" type="number">
+	<button onclick=opgave5()>Press to reverse</button>
+	<input id="opgave5" value="Result will come here" readonly>
+
+</body>
+
+<script>
+	function opgave1() {
+		var talet = parseInt(document.getElementById("number1").value);
+		var talto = parseInt(document.getElementById("number2").value);
+		var sluttal = 0;
+
+		if (talet == talto) {
+			sluttal = talet + talto + talet;
+
+		} else {
+			sluttal = talet;
+			sluttal += talto;
+		}
+		document.getElementById("sluttallet").value = sluttal;
+	}
+
+
+
+	var arr = [1, 2, 4];
+	document.getElementById("arropgave58").value = arr;
+
+	function opgave58add1(){
+
+		arr.push(parseInt(document.getElementById("taltillarr").value, 10))
+		document.getElementById("arropgave58").value = arr;
+
+	}
+
+	function opgave58() {
+
+		
+		var where3 = arr.indexOf(3);
+		console.log(where3);
+		var where5 = arr.indexOf(5);
+		console.log(where5)
+
+		if ( where3 != -1 || where5 != -1){
+
+			document.getElementById("opgave58").value = "Der er et 3 og/eller 5 i arrayet"
+
+		} else {
+			document.getElementById("opgave58").value = "Der er ikke noget 3 eller 5 i arrayet"
+		} 
+
+
+
+	}
+
+
+
+
+	var arr1 = [4, 5, 6, 2, 5, 3]
+	document.getElementById("arr1opgave3").value = arr1;
+	var arr2 = [1, 3, 4, 0, 2, 5]
+	document.getElementById("arr2opgave3").value = arr2;
+
+	function opgave3add1() {
+
+		arr1.push(parseInt(document.getElementById("taltillarr1").value, 10))
+		console.log(arr1)
+		document.getElementById("arr1opgave3").value = arr1;
+
+	}
+
+	function opgave3add2() {
+
+		arr2.push(parseInt(document.getElementById("taltilarr2").value, 10))
+		console.log(arr2)
+		document.getElementById("arr2opgave3").value = arr2;
+	}
+
+	function opgave3() {
+
+		var together = arr1.concat(arr2);
+		var sortet = together.sort(function (a, b) {
+			return a - b
+		});
+
+		console.log(sortet.length / 2);
+
+		if (Math.floor(sortet.length / 2) == sortet.length / 2) {
+			console.log(sortet.length / 2);
+			sortet.splice(sortet.length / 2);
+			console.log(sortet);
+			var median = sortet.pop();
+			document.getElementById("opgave3").value = median;
+		} else {
+
+			var half = Math.floor(sortet.length / 2) + 1;
+			sortet.splice(half);
+			console.log(sortet);
+			var median = sortet.pop();
+			document.getElementById("opgave3").value = median;
+		}
+
+	}
+
+	function opgave5() {
+
+		var input = document.getElementById("taltilatvende").value;
+
+		var splitter = input.split("");
+		var tupni = splitter.reverse("")
+		var tostring = tupni.toString();
+		console.log(tostring);
+		var withoutcomma;
+
+		for (var i = 0; i < tupni.length + 1; i++) {
+			//withoutcomma = tostring.replace(/regExp/, , "");
+		}
+
+		document.getElementById("opgave5").value = withoutcomma;
+	}
+</script>
+
+</html>
