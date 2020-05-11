@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+</head>
+
+<body>
+    <input type="button" onclick="location.href='../index.html';" value="Go back to start" />
+    <h1>Forsættelse på opgaver fra Torsdag d. 07/05</h1>
+    <br>
+    <br>
+    <hr>
+    <h1>Nemme Opgaver</h1>
+    <h2>Opgave 2</h2>
+    <input id="taltilX" value="0" type="number">
+    <button onclick=opgave2add()>Press to get x</button>
+    <input id="taltilXvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=Opgave2()>Press to find different</button>
+    <input id="opgave2" value="Result will come here" readonly>
+
+    <h2>Opgave 3</h2>
+    <input id="foersteInt" value="0" type="number">
+    <button onclick=opgave3add1()>Press to add Int</button>
+    <input id="foersteIntvalue" value="Result will come here" readonly>
+    <br>
+    <input id="andenInt" value="0" type="number">
+    <button onclick=opgave3add2()>Press to add Int</button>
+    <input id="andenIntvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave3()>Press to find if one is 30, or the sum is 30</button>
+    <input id="opgave3" value="Result will come here" readonly>
+
+    <h2>Opgave 4</h2>
+    <input id="opgave4x" value="0" type="number">
+    <button onclick=opgave4add()>Press to add Int</button>
+    <input id="opgave4xvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave4()>Press to find if it is between 10 and 100</button>
+    <input id="opgave4" value="Result will come here" readonly>
+
+    <h2>Opgave 5</h2>
+    <input id="opgave5x" value="0" type="number">
+    <button onclick=opgave5add()>Press to add Int</button>
+    <input id="opgave5xvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave5()>Press to find if it is between 10 and 100</button>
+    <input id="opgave5" value="Result will come here" readonly>
+
+    <h3>Opgave 6</h3>
+    <input id="opgave6x" value="0" type="number">
+    <button onclick=opgave6add()>Press to add tempertur</button>
+    <input id="opgave6xvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave6()>Press to find tempertur</button>
+    <input id="opgave6" value="Result will come here" readonly>
+
+    <h2>Opgave 7</h2>
+    <input id="opgave7x" value="0" type="number">
+    <button onclick=opgave7add()>Press to add number to check</button>
+    <input id="opgave7xvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave7()>Press to find if number is in range</button>
+    <input id="opgave7" value="Result will come here" readonly>
+
+    <h2>Opgave 8</h2>
+    <input id="opgave8x1" value="0" type="number">
+    <button onclick=opgave8add1()>Press to add first number</button>
+    <input id="opgave8x1value" value="Result will come here" readonly>
+    <br>
+    <input id="opgave8x2" value="0" type="number">
+    <button onclick=opgave8add2()>Press to add second number</button>
+    <input id="opgave8x2value" value="Result will come here" readonly>
+    <br>
+    <input id="opgave8x3" value="0" type="number">
+    <button onclick=opgave8add3()>Press to add third number</button>
+    <input id="opgave8x3value" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave8()>Press to find if one of the numbers is in range</button>
+    <input id="opgave8" value="Result will come here" readonly>
+</body>
+
+<script>
+    var x;
+
+    function opgave2add() {
+        x = document.getElementById("taltilX").value;
+        document.getElementById("taltilXvalue").value = x;
+    }
+
+    function Opgave2() {
+
+        var diffrent = 51 - x;
+        var result = 0;
+
+        if (x > 51) {
+
+            result = (diffrent * -1) * 3;
+            document.getElementById("opgave2").value = result;
+        } else {
+
+            result = diffrent;
+            document.getElementById("opgave2").value = result;
+        }
+
+
+    }
+
+    var int1;
+    var int2;
+
+    function opgave3add1() {
+        int1 = document.getElementById("foersteInt").value;
+        document.getElementById("foersteIntvalue").value = int1;
+    }
+
+    function opgave3add2() {
+        int2 = document.getElementById("andenInt").value;
+        document.getElementById("andenIntvalue").value = int2;
+    }
+
+    function opgave3() {
+
+        var intint = parseInt(int1, 10) + parseInt(int2, 10);
+
+        if (int1 == 30 || int2 == 30 || intint == 30) {
+
+            document.getElementById("opgave3").value = "true";
+
+        } else {
+
+            document.getElementById("opgave3").value = "False";
+        }
+
+    }
+    
+    var x2;
+
+    function opgave4add(){
+        x2 = document.getElementById("opgave4x").value;
+        document.getElementById("opgave4xvalue").value = x2;
+    }
+
+    function opgave4(){
+
+        if (x2 >= 10 && x2 <= 100){
+
+            document.getElementById("opgave4").value = "It is between 10 and 100";
+
+        } else if (x2 >= 10 && x2 <= 200){
+
+            document.getElementById("opgave4").value = "It is not between 10 and 100, but it is between 10 and 200";
+        } else{
+            document.getElementById("opgave4").value = "It is not between 10 and 100 or 10 and 200";
+        }
+
+    }
+
+    var x5;
+
+    function opgave5add(){
+        x5 = document.getElementById("opgave5x").value;
+        document.getElementById("opgave5xvalue").value = x5;
+    }
+
+    function opgave5(){
+
+        if(x5/3 == Math.floor(x5/3)){
+            document.getElementById("opgave5").value = "It is a mulitpule of 3";
+        } else if (x5/7 == Math.floor(x5/7)){
+            document.getElementById("opgave5").value = "It is a mulitpule of 7";
+        } else{
+            document.getElementById("opgave5").value = "It is not a mulitpule of 3 or 7";
+        }
+    }
+
+    var temp;
+
+    function opgave6add(){
+        temp = document.getElementById("opgave6x").value;
+        document.getElementById("opgave6xvalue").value = temp;
+    }
+
+    function opgave6(){
+
+        if (temp < 0){
+            document.getElementById("opgave6").value = "The temp is bellow 0";
+        } else if (temp> 100){
+            document.getElementById("opgave6").value = "The temp is over 100";
+        } else {
+            document.getElementById("opgave6").value = "False";
+        }
+    }
+
+    var numberrange;
+
+    function opgave7add(){
+        numberrange = document.getElementById("opgave7x").value;
+        document.getElementById("opgave7xvalue").value = numberrange;
+    }
+
+    function opgave7(){
+
+        if (numberrange >= 100 && numberrange <= 200){
+            document.getElementById("opgave7").value = "The number is in the range of 100 and 200";
+        } else {
+            document.getElementById("opgave7").value ="The number is not in the range of 100 and 200";
+        }
+    }
+
+    
+    var number1;
+    var number2;
+    var number3;
+
+    function opgave8add1(){
+        number1 = document.getElementById("opgave8x1").value;
+        document.getElementById("opgave8x1value").value = number1;
+    }
+    function opgave8add2(){
+        number2 = document.getElementById("opgave8x2").value;
+        document.getElementById("opgave8x2value").value = number2;
+    }
+    function opgave8add3(){
+        number3 = document.getElementById("opgave8x3").value;
+        document.getElementById("opgave8x3value").value = number3;
+    }
+
+    function opgave8(){
+
+        if (number1 >= 20 && number1 <= 50){
+            document.getElementById("opgave8").value = "One number is in the range of 20 and 50";
+        } else if (number2 >= 20 && number2 <= 50){
+            document.getElementById("opgave8").value = "One number is in the range of 20 and 50";
+        } else if (number3 >= 20 && number3 <= 50){
+            document.getElementById("opgave8").value = "One number is in the range of 20 and 50";
+        } else{
+            document.getElementById("opgave8").value = "No numbers are in the range";
+        }
+    }
+
+
+    
+
+</script>
+
+</html>
