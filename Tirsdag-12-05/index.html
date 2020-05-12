@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <input type="button" onclick="location.href='../index.html';" value="Go back to start" />
+    <br>
+    <br>
+    <hr>
+    <h1>Opgaver Tirsdag-12-05</h1>
+    <h2>Opgave 10</h2>
+    <input id="opgave10add1" value="0" type="number">
+    <button onclick=opgave10add1()>Press to add first number</button>
+    <input id="opgave10add1value" value="Result will come here" readonly>
+    <br>
+    <input id="opgave10add2" value="0" type="number">
+    <button onclick=opgave10add2()>Press to add second number</button>
+    <input id="opgave10add2value" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave10()>Press to find value closest to 100</button>
+    <input id="opgave10" value="Result will come here" readonly>
+    <h2>Opgave 11</h2>
+    <input id="opgave11add1" value="0" type="number">
+    <button onclick=opgave11add1()>Press to add first number</button>
+    <input id="opgave11add1value" value="Result will come here" readonly>
+    <br>
+    <input id="opgave11add2" value="0" type="number">
+    <button onclick=opgave11add2()>Press to add second number</button>
+    <input id="opgave11add2value" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave11()>Press to check if they are in range</button>
+    <input id="opgave11" value="Result will come here" readonly>
+    <h2>Opgave 12</h2>
+    <input id="opgave12add1" value="0" type="number" min="0">
+    <button onclick=opgave12add1()>Press to add first number</button>
+    <input id="opgave12add1value" value="Result will come here" readonly>
+    <br>
+    <input id="opgave12add2" value="0" type="number" min="0">
+    <button onclick=opgave12add2()>Press to add second number</button>
+    <input id="opgave12add2value" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave12()>Press to check if they are in range</button>
+    <input id="opgave12" value="Result will come here" readonly>
+    <h2>Opgave 13</h2>
+    <input id="opgave13add1" value="0" type="number">
+    <button onclick=opgave13add1()>Press to add first number</button>
+    <input id="opgave13add1value" value="Result will come here" readonly>
+    <br>
+    <input id="opgave13add2" value="0" type="number">
+    <button onclick=opgave13add2()>Press to add second number</button>
+    <input id="opgave13add2value" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave13()>Press to check if they are in range</button>
+    <input id="opgave13" value="Result will come here" readonly>
+    <h2>Opgave 14</h2>
+    <input id="opgave14add" value="0" type="number">
+    <button onclick=opgave14add()>Press to add numbers</button>
+    <input id="opgave14addvalue" value="Result will come here" readonly>
+    <br>
+    <button onclick=opgave14()>Press to find the sequence</button>
+    <input id="opgave14" value="Result will come here" readonly>
+
+</body>
+
+<script>
+    var n1;
+    var n2;
+
+    function opgave10add1() {
+
+        n1 = document.getElementById("opgave10add1").value
+        document.getElementById("opgave10add1value").value = n1
+    }
+
+    function opgave10add2() {
+
+        n2 = document.getElementById("opgave10add2").value
+        document.getElementById("opgave10add2value").value = n2
+    }
+
+    function opgave10() {
+
+        var different1 = 100 - n1;
+        var different2 = 100 - n2;
+
+        if (different1 > different2) {
+
+            document.getElementById("opgave10").value = "The second number is closest to 100 with " + different2;
+        } else if (different2 > different1) {
+            document.getElementById("opgave10").value = "The first number is closest to 100 with " + different1;
+        } else {
+            document.getElementById("opgave10").value = "They are equelly close to 100"
+        }
+
+    }
+
+    var x1;
+    var x2;
+
+    function opgave11add1() {
+        x1 = document.getElementById("opgave11add1").value;
+        document.getElementById("opgave11add1value").value = x1;
+    }
+
+    function opgave11add2() {
+        x2 = document.getElementById("opgave11add2").value;
+        document.getElementById("opgave11add2value").value = x2;
+    }
+
+    function opgave11() {
+
+        if (x1 >= 40 && x2 >= 40 && x1 <= 50 && x2 <= 50) {
+            document.getElementById("opgave11").value = "The numbers are in range 40..50";
+        } else if (x1 >= 50 && x2 >= 50 && x1 <= 60 && x2 <= 60) {
+
+            document.getElementById("opgave11").value = "The numbers are in range 50..60";
+        } else {
+            document.getElementById("opgave11").value = "One or non of the numbers are in range";
+        }
+
+    }
+
+    var y1;
+    var y2;
+
+    function opgave12add1() {
+        y1 = document.getElementById("opgave12add1").value;
+        document.getElementById("opgave12add1value").value = y1;
+    }
+
+    function opgave12add2() {
+        y2 = document.getElementById("opgave12add2").value;
+        document.getElementById("opgave12add2value").value = y2;
+    }
+
+
+    function opgave12() {
+
+        if (y1 >= 40 && y2 >= 40 && y1 <= 50 && y2 <= 50) {
+
+            if (y1 > y2) {
+                document.getElementById("opgave12").value = "Both are in range and number 1 is biggest";
+            } else if (y2 > y1) {
+                document.getElementById("opgave12").value = "Both are in range and number 2 is biggest";
+            } else {
+                document.getElementById("opgave12").value = "Both are in range and they are equal";
+            }
+
+        } else {
+            document.getElementById("opgave12").value = "One or non of the numbers are in range";
+        }
+
+    }
+
+    var add113;
+    var add213;
+
+    function opgave13add1() {
+        add113 = document.getElementById("opgave13add1").value;
+        document.getElementById("opgave13add1value").value = add113;
+    }
+
+    function opgave13add2() {
+        add213 = document.getElementById("opgave13add2").value;
+        document.getElementById("opgave13add2value").value = add213;
+    }
+
+    function opgave13() {
+
+        var splittet1 = add113.split("");
+        var splittet2 = add213.split("");
+
+        var last1 = splittet1.pop();
+        var last2 = splittet2.pop();
+
+        if (last1 == last2) {
+            document.getElementById("opgave13").value = "They have the same last digit"
+        } else {
+            document.getElementById("opgave13").value = "They do not have the same digit"
+        }
+    }
+
+    var numbers;
+
+    function opgave14add() {
+        numbers = document.getElementById("opgave14add").value;
+        document.getElementById("opgave14addvalue").value = numbers;
+    }
+
+    function opgave14() {
+
+        if (numbers.includes("123") == true) {
+            document.getElementById("opgave14").value = "The sequence includes 123"
+        } else {
+            document.getElementById("opgave14").value = "The sequence does not include 123"
+        }
+    }
+</script>
